@@ -3,6 +3,7 @@ import "./App.scss";
 import Home from "./Home";
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import About from "./About";
+import Vans from "./Vans";
 
 function App() {
   return (
@@ -17,15 +18,16 @@ function App() {
                 <Link to='/about' className="w-[51.83px] h-[22.92px] left-0 top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] underline leading-[22.92px]">
                     About
                 </Link>
-                <div className="w-[51.83px] h-[22.92px] left-[64.78px] top-0 absolute text-right text-neutral-600 text-base font-semibold font-['Inter'] leading-[22.92px]">
+                <Link to='/vans' className="w-[51.83px] h-[22.92px] left-[64.78px] top-0 absolute text-right text-neutral-600 text-base font-semibold font-['Inter'] leading-[22.92px]">
                     Vans
-                </div>
+                </Link>
             </div>
         </header>
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/vans" element={ <Vans /> } />
       </Routes>
       </BrowserRouter>
     </>
