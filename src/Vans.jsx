@@ -34,7 +34,7 @@ export default function Vans(){
                 <div className="grid grid-cols-2 gap-x-20 gap-y-20 w-full">
                     {
                         vans.map((van) => {
-                            return <Van key={van.id} name={van.name} type={van.type} image={van.image} price={van.price}/>
+                            return <Van id={van.id} name={van.name} type={van.type} image={van.image} price={van.price}/>
                         })
                     }
                 </div>

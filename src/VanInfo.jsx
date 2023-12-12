@@ -1,7 +1,7 @@
 import React from "react";
 import data from "./data";
 
-export default function VanInfo(){
+export default function VanInfo(props){
     return(
         <>
         <div className="w-[548.15px] h-[1259.75px] relative bg-orange-50">
