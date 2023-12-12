@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Van from "./Van";
+import vans from "./data"
 
 export default function Vans(){
     return(
@@ -29,9 +30,15 @@ export default function Vans(){
                     </div>
                 </div>
             </section>
-            <main className="grid grid-cols-2 gap-4">
-                <Van name="Modest Explorer" price="$60" type="Simple" />
-                <Van name="Modest Explorer" price="$60" type="Simple" />
+            <main className="h-[1000px] w-[450px] left-7 top-[319.19px] flex flex-row absolute">
+                <div className="grid grid-cols-2 gap-x-20 gap-y-20 w-full">
+                    <Van type="Simple"/>
+                    <Van type="Simple"/>
+                    <Van type="Simple"/>
+                    <Van type="Simple"/>
+                    <Van type="Simple"/>
+                    <Van type="Simple"/>
+                </div>
             </main>
             <footer className="w-[550px] h-[70px] pl-[107px] pr-[107.13px] pt-[23px] pb-[23.08px] left-[-0.21px] top-[1381.86px] absolute bg-neutral-800 justify-center items-center inline-flex">
                 <div className="w-[335.87px] h-[23.92px] text-center text-neutral-400 text-sm font-medium font-['Inter'] leading-[22.92px]">
