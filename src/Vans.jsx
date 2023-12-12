@@ -3,23 +3,6 @@ import { useState, useEffect } from "react";
 import Van from "./Van";
 
 export default function Vans(){
-    // const [vans, setVans] = useState([]);
-
-    // const getVans = async () => {
-    //     try {
-    //       const response = await fetch("/vans");
-    //       const jsonData = await response.json();
-    
-    //       setVans(jsonData);
-    //     } catch (err) {
-    //       console.error(err.message);
-    //     }
-    //   };
-    
-    //   useEffect(() => {
-    //     getVans();
-    //   }, []); 
-
     return(
         <>
         <div className="ProductList w-[548.15px] h-[1451.11px] relative bg-orange-50">
@@ -46,8 +29,9 @@ export default function Vans(){
                     </div>
                 </div>
             </section>
-            <main>
-                <Van />
+            <main className="grid grid-cols-2 gap-4">
+                <Van name="Modest Explorer" price="$60" type="Simple" />
+                <Van name="Modest Explorer" price="$60" type="Simple" />
             </main>
             <footer className="w-[550px] h-[70px] pl-[107px] pr-[107.13px] pt-[23px] pb-[23.08px] left-[-0.21px] top-[1381.86px] absolute bg-neutral-800 justify-center items-center inline-flex">
                 <div className="w-[335.87px] h-[23.92px] text-center text-neutral-400 text-sm font-medium font-['Inter'] leading-[22.92px]">
@@ -67,7 +51,6 @@ export default function Vans(){
             </div>
             <div className="Group204 w-[85.71px] h-[33.89px] left-[0.09px] top-[36.87px] absolute">
                 <div className="Rectangle140 w-[85.71px] h-[33.89px] left-0 top-0 absolute bg-red-400 rounded-[5px]" />
-                <div className="Simple w-[58.80px] h-[28.90px] left-[13.95px] top-[1.99px] absolute text-center text-orange-100 text-base font-semibold font-['Inter'] leading-loose">Simple</div>
             </div>
             <div className="Group204 w-[85.71px] h-[33.89px] left-[265.09px] top-[373.87px] absolute">
                 <div className="Rectangle140 w-[85.71px] h-[33.89px] left-0 top-0 absolute bg-red-400 rounded-[5px]" />
