@@ -4,6 +4,7 @@ import Home from "./Home";
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import About from "./About";
 import Vans from "./Vans";
+import VanInfo from "./VanInfo";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={ <Vans /> } />
+        <Route path="/demo" element={ <VanInfo /> } />
       </Routes>
       </BrowserRouter>
     </>
