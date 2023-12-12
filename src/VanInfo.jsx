@@ -1,43 +1,45 @@
 import React from "react";
 import data from "./data";
+import { Link, useParams } from "react-router-dom";
 
 export default function VanInfo(props){
+    const { id } = useParams();
     return(
         <>
         <div className="w-[548.15px] h-[1259.75px] relative bg-orange-50">
             <div className="left-[26.91px] top-[151.49px] absolute">
-                <div className="text-stone-900 text-base font-medium font-['Inter'] underline leading-[22.92px]">
+                <Link to="/vans" className="text-stone-900 text-base font-medium font-['Inter'] underline leading-[22.92px]">
                     Back to all vans
-                </div>
+                </Link>
             </div>
             <div className="w-[494.33px] left-[26.91px] top-[810.27px] absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">
-                {data[0].name}
+                {data[id-1].name}
             </div>
             <div className="w-[494.33px] left-[26.91px] top-[854px] absolute">
                 <span className="text-neutral-900 text-2xl font-bold font-['Inter'] leading-[44.15px]">
-                    {data[0].price}
+                    {data[id-1].price}$
                 </span>
                 <span className="text-neutral-900 text-xl font-medium font-['Inter'] leading-[44.15px]">
                     /day
                 </span>
             </div>
             <div className="w-[494.33px] left-[26.91px] top-[908.81px] absolute text-neutral-900 text-base font-medium font-['Inter'] leading-normal">
-                {data[0].description}
+                {data[id-1].description}
             </div>
             <div className="w-[494.33px] h-[49.83px] left-[26.91px] top-[1050.46px] absolute">
                 <div className="w-[494.33px] h-[49.83px] left-0 top-0 absolute bg-orange-400 rounded-[4.98px]" />
                 <div className="w-[207.90px] h-[30.09px] left-[143.52px] top-[9.97px] absolute text-center text-white text-lg font-bold font-['Inter'] leading-loose">Rent this van</div>
             </div>
-            <img className="w-[497.32px] h-[490.35px] left-[26.91px] top-[215.27px] absolute rounded-[5px]" src={data[0].image} />
+            <img className="w-[497.32px] h-[490.35px] left-[26.91px] top-[215.27px] absolute rounded-[5px]" src={data[id-1].image} />
             <div className="w-[85.71px] h-[33.89px] left-[27.06px] top-[756px] absolute">
                 <div className={ 
-                    data[0].type === "simple" ? "w-[85.71px] h-[33.89px] left-0 top-0 absolute rounded-[5px] bg-red-400" : 
-                    data[0].type === "luxury" ? "w-[85.71px] h-[33.89px] left-0 top-0 absolute rounded-[5px] bg-neutral-900" : 
+                    data[id-1].type === "simple" ? "w-[85.71px] h-[33.89px] left-0 top-0 absolute rounded-[5px] bg-red-400" : 
+                    data[id-1].type === "luxury" ? "w-[85.71px] h-[33.89px] left-0 top-0 absolute rounded-[5px] bg-neutral-900" : 
                     "w-[85.71px] h-[33.89px] left-0 top-0 absolute rounded-[5px] bg-teal-800" 
                     }>
                     <div className="w-[58.80px] h-[28.90px] left-[13.95px] top-[1.99px] absolute text-center text-orange-100 text-base font-semibold font-['Inter'] leading-loose">
-                        {data[0].type === "simple" ? "Simple" : 
-                        data[0].type === "luxury" ? "Luxury" : 
+                        {data[id-1].type === "simple" ? "Simple" : 
+                        data[id-1].type === "luxury" ? "Luxury" : 
                         "Rugged"}
                     </div>
                 </div>
