@@ -4,7 +4,12 @@ export default function Van(props) {
     return (
         <>
             <div className="w-[492.34px] h-[41.86px]">
-                <img className="w-[229.23px] h-[229.23px] rounded-[5px]" src={props.image} />
+                <div className="relative max-w-xl mx-auto">
+                    <img className="w-[229.23px] h-[229.23px] rounded-[5px]" src={props.image} />
+                    <div class="absolute top-0 left-[153.8px] w-[75px] h-[40px] rounded-[5px] flex items-center bg-indigo-500 justify-center">
+                        <h2 class="text-white text-base font-bold">{props.price}$/day</h2>
+                    </div>
+                </div>
                 <div className="flex">
                     <div className="text-neutral-900 text-xl font-semibold font-['Inter'] leading-loose">
                         {props.name}
