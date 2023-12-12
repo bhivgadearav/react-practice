@@ -30,6 +30,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={ <Vans /> } />
         <Route path="/vans/:id" element={<VanInfo />} />
+        <Route path="/vans/tier/:tier" element={<Vans />} />
+        <Route path="*" element={<h1 className="text-center">404 Not Found</h1>} />
       </Routes>
       </BrowserRouter>
     </>
