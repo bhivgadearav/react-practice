@@ -32,12 +32,11 @@ export default function Vans(){
             </section>
             <main className="h-[1000px] w-[450px] left-7 top-[319.19px] flex flex-row absolute">
                 <div className="grid grid-cols-2 gap-x-20 gap-y-20 w-full">
-                    <Van type="Simple"/>
-                    <Van type="Simple"/>
-                    <Van type="Simple"/>
-                    <Van type="Simple"/>
-                    <Van type="Simple"/>
-                    <Van type="Simple"/>
+                    {
+                        vans.map((van) => {
+                            return <Van key={van.id} name={van.name} type={van.type} image={van.image} />
+                        })
+                    }
                 </div>
             </main>
             <footer className="w-[550px] h-[70px] pl-[107px] pr-[107.13px] pt-[23px] pb-[23.08px] left-[-0.21px] top-[1381.86px] absolute bg-neutral-800 justify-center items-center inline-flex">
