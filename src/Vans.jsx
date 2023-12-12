@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Van from "./Van";
 
 export default function Vans(){
     // const [vans, setVans] = useState([]);
@@ -45,22 +46,9 @@ export default function Vans(){
                     </div>
                 </div>
             </section>
-            <div className="h-[646.95px] left-[26.91px] top-[314.94px] absolute">
-                <div className="w-[492.34px] h-[407.75px] left-0 top-[239.19px] absolute">
-                    <div className="w-[492.34px] h-[41.86px] left-0 top-0 absolute">
-                        <div className="w-[159px] left-0 top-0 absolute text-neutral-900 text-xl font-semibold font-['Inter'] leading-loose">
-                            Modest Explorer
-                        </div>
-                        <div className="left-[188.35px] top-[-0px] absolute text-right text-neutral-900 text-xl font-semibold font-['Inter'] leading-loose">
-                            $60
-                        </div>
-                        <div className="w-[58.80px] h-3.5 left-[170.43px] top-[27.91px] absolute text-right text-neutral-900 text-sm font-medium font-['Avenir Next'] leading-loose">
-                            /day
-                        </div>
-                    </div>
-                </div>
-                <img className="w-[229.23px] h-[229.23px] left-0 top-0 absolute rounded-[5px]" src="https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png" />
-            </div>
+            <main>
+                <Van />
+            </main>
             <footer className="w-[550px] h-[70px] pl-[107px] pr-[107.13px] pt-[23px] pb-[23.08px] left-[-0.21px] top-[1381.86px] absolute bg-neutral-800 justify-center items-center inline-flex">
                 <div className="w-[335.87px] h-[23.92px] text-center text-neutral-400 text-sm font-medium font-['Inter'] leading-[22.92px]">
                     Ⓒ 2022 #VANLIFE
