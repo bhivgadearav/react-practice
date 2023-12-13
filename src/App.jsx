@@ -5,6 +5,8 @@ import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import About from "./About";
 import Vans from "./Vans";
 import VanInfo from "./VanInfo";
+import NotFound from "./NotFound";
+import Login from "./Login";
 
 function App() {
   return (
@@ -16,12 +18,15 @@ function App() {
                 #VANLIFE
             </Link>
             <div className="grow shrink basis-0 self-stretch relative">
-                <Link to='/about' className="w-[51.83px] h-[22.92px] left-0 top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] underline leading-[22.92px]">
-                    About
-                </Link>
-                <Link to='/vans' className="w-[51.83px] h-[22.92px] left-[64.78px] top-0 absolute text-right text-neutral-600 text-base font-semibold font-['Inter'] leading-[22.92px]">
-                    Vans
-                </Link>
+              <div className="w-[51.83px] h-[22.92px] left-[-64.78px] top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]">
+                Host
+              </div>
+              <Link to='/about' className="w-[51.83px] h-[22.92px] left-0 top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]">
+                  About
+              </Link>
+              <Link to='/vans' className="w-[51.83px] h-[22.92px] left-[64.78px] top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]">
+                  Vans
+              </Link>
             </div>
         </header>
       </div>
@@ -31,7 +36,8 @@ function App() {
         <Route path="/vans" element={ <Vans /> } />
         <Route path="/vans/:id" element={<VanInfo />} />
         <Route path="/vans/tier/:tier" element={<Vans />} />
-        <Route path="*" element={<h1 className="text-center">404 Not Found</h1>} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       </BrowserRouter>
     </>

@@ -15,7 +15,9 @@ function Home(props) {
                         <p className="w-[494.33px] left-0 top-0 absolute text-white text-base font-medium font-['Inter'] leading-normal">Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.</p>
                         <div className="w-[494.33px] h-[49.83px] left-0 top-[99.66px] absolute">
                             <div className="orange-bg w-[494.33px] h-[49.83px] left-0 top-0 absolute bg-orange-400 rounded-[5px]">
-                                <a className="find-van-btn w-[207.90px] h-[30.09px] left-[143.18px] top-[8.97px] absolute text-center text-white text-base font-bold font-['Inter'] leading-loose">Find your van</a>
+                                <Link to='/vans' className="find-van-btn w-[207.90px] h-[30.09px] left-[143.18px] top-[8.97px] absolute text-center text-white text-base font-bold font-['Inter'] leading-loose">
+                                    Find your van
+                                </Link>
                             </div>
                         </div>
                     </div>
