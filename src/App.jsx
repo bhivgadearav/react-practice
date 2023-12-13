@@ -42,7 +42,10 @@ function App() {
         <Route path="/vans/tier/:tier" element={<Vans />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/host" element={<HostedReviews />} />
+        <Route path="/host" element={<HostDashboard />} />
+        <Route path="/host/income" element={<HostIncome />} />
+        <Route path="/host/vans" element={<HostVans/>} />
+        <Route path="/host/reviews" element={<HostReviews />} />
       </Routes>
       </BrowserRouter>
     </>
