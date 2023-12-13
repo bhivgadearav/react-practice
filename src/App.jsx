@@ -7,6 +7,10 @@ import Vans from "./Vans";
 import VanInfo from "./VanInfo";
 import NotFound from "./NotFound";
 import Login from "./Login";
+import HostDashboard from "./HostDashboard";
+import HostVans from "./HostVans";
+import HostReviews from "./HostReviews";
+import HostIncome from "./HostIncome";
 
 function App() {
   return (
@@ -18,9 +22,9 @@ function App() {
                 #VANLIFE
             </Link>
             <div className="grow shrink basis-0 self-stretch relative">
-              <div className="w-[51.83px] h-[22.92px] left-[-64.78px] top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]">
+              <Link to='/host' className="w-[51.83px] h-[22.92px] left-[-64.78px] top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]">
                 Host
-              </div>
+              </Link>
               <Link to='/about' className="w-[51.83px] h-[22.92px] left-0 top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]">
                   About
               </Link>
@@ -38,6 +42,7 @@ function App() {
         <Route path="/vans/tier/:tier" element={<Vans />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/host" element={<HostedReviews />} />
       </Routes>
       </BrowserRouter>
     </>
