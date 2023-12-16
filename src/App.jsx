@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.scss";
+import "./App.css";
 import Home from "./Home";
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import About from "./About";
@@ -11,12 +11,13 @@ import HostDashboard from "./HostDashboard";
 import HostVans from "./HostVans";
 import HostReviews from "./HostReviews";
 import HostIncome from "./HostIncome";
+import HostNav from "./HostNav";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <div className="w-[548.15px] relative z-10 bg-orange-50">
+      <div className="w-[548.15px] h-[100px] relative z-50 bg-orange-50">
         <header className="pl-[26px] pr-[25.82px] pt-9 pb-[34.62px] left-[0.02px] top-0 absolute bg-orange-50 justify-center items-center gap-[235.21px] inline-flex">
             <Link to='/' className="w-[144.51px] text-black text-[25.35px] font-black font-['Inter'] leading-10">
                 #VANLIFE
@@ -42,10 +43,12 @@ function App() {
         <Route path="/vans/tier/:tier" element={<Vans />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/host" element={<HostDashboard />} />
-        <Route path="/host/income" element={<HostIncome />} />
-        <Route path="/host/vans" element={<HostVans/>} />
-        <Route path="/host/reviews" element={<HostReviews />} />
+        <Route element={<HostNav />}>
+          <Route path="/host" element={<HostDashboard />} />
+          <Route path="/host/income" element={<HostIncome />} />
+          <Route path="/host/vans" element={<HostVans />} />
+          <Route path="/host/reviews" element={<HostReviews />} />
+        </Route>
       </Routes>
       </BrowserRouter>
     </>

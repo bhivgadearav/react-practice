@@ -3,11 +3,7 @@ import React from "react";
 export default function HostVans(){
     return (
         <>
-        <div className="w-[548px] h-[763px] relative bg-orange-50">
-            <div className="w-[98px] h-[21px] left-[26px] top-[144px] absolute text-neutral-600 text-lg font-medium font-['Inter'] leading-[22.92px]">Dashboard</div>
-            <div className="w-12 h-[21px] left-[248px] top-[144px] absolute text-neutral-900 text-lg font-bold font-['Inter'] underline leading-[22.92px]">Vans</div>
-            <div className="w-[75px] h-[21px] left-[324px] top-[144px] absolute text-neutral-600 text-lg font-medium font-['Inter'] leading-[22.92px]">Reviews</div>
-            <div className="w-[67px] h-[21px] left-[152px] top-[144px] absolute text-neutral-600 text-lg font-medium font-['Inter'] leading-[22.92px]">Income</div>
+        <div className="w-[548px] h-[763px] relative bg-orange-50 top-[200px]">
             <div className="w-[548px] h-[75px] pl-[106px] pr-[106.13px] pt-[25.68px] pb-[25.40px] left-0 top-[688px] absolute bg-neutral-800 justify-center items-center inline-flex">
                 <div className="w-[335.87px] h-[23.92px] text-center text-neutral-400 text-sm font-medium font-['Inter'] leading-[22.92px]">Ⓒ 2022 #VANLIFE</div>
             </div>

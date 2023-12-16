@@ -3,11 +3,7 @@ import React from "react";
 export default function HostReviews(){
     return (
         <>
-        <div className="w-[548px] h-[1089px] relative bg-orange-50">
-            <div className="w-[98px] h-[21px] left-[26px] top-[144px] absolute text-neutral-600 text-lg font-medium font-['Inter'] leading-[22.92px]">Dashboard</div>
-            <div className="w-12 h-[21px] left-[248px] top-[144px] absolute text-neutral-600 text-lg font-medium font-['Inter'] leading-[22.92px]">Vans</div>
-            <div className="w-[75px] h-[21px] left-[324px] top-[144px] absolute text-neutral-900 text-lg font-bold font-['Inter'] underline leading-[22.92px]">Reviews</div>
-            <div className="w-[67px] h-[21px] left-[152px] top-[144px] absolute text-neutral-600 text-lg font-medium font-['Inter'] leading-[22.92px]">Income</div>
+        <div className="w-[548px] h-[1089px] relative bg-orange-50 top-[200px]">
             <div className="w-[497.09px] h-[340px] left-[24.91px] top-[218px] absolute">
                 <div className="w-[494.33px] left-0 top-0 absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">
                     Your reviews
