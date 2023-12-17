@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function HostVans(){
     return (
@@ -8,7 +9,7 @@ export default function HostVans(){
                 <div className="w-[335.87px] h-[23.92px] text-center text-neutral-400 text-sm font-medium font-['Inter'] leading-[22.92px]">Ⓒ 2022 #VANLIFE</div>
             </div>
             <div className="w-[494.33px] left-[26.12px] top-[220px] absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">Your listed vans</div>
-            <section className="w-[494px] h-[102px] left-[26px] top-[286px] absolute">
+            <Link to='/host/vans/1' className="w-[494px] h-[102px] left-[26px] top-[286px] absolute">
                 <div className="w-[494px] h-[102px] left-0 top-0 absolute bg-white rounded-md" />
                 <div className="w-[411px] h-[66px] left-[24px] top-[18px] absolute">
                     <img className="w-[65.88px] h-[65.88px] left-[0.12px] top-[0.08px] absolute rounded-[5px]" src="/images/modest-explorer.png" />
@@ -19,8 +20,8 @@ export default function HostVans(){
                         $60/day
                     </div>
                 </div>
-            </section>
-            <section className="w-[494px] h-[102px] left-[27px] top-[403px] absolute">
+            </Link>
+            <Link to='/host/vans/2' className="w-[494px] h-[102px] left-[27px] top-[403px] absolute">
                 <div className="w-[494px] h-[102px] left-0 top-0 absolute bg-white rounded-md" />
                 <div className="w-[411px] h-[66px] left-[24px] top-[18px] absolute">
                     <img className="w-[66px] h-[66px] left-0 top-0 absolute rounded-[5px]" src="/images/beach-bum.png" />
@@ -31,8 +32,8 @@ export default function HostVans(){
                         $80/day
                     </div>
                 </div>
-            </section>
-            <section className=" w-[494px] h-[102px] left-[26px] top-[520px] absolute">
+            </Link>
+            <Link to='/host/vans/6' className=" w-[494px] h-[102px] left-[26px] top-[520px] absolute">
                 <div className="w-[494px] h-[102px] left-0 top-0 absolute bg-white rounded-md" />
                 <div className="w-[231px] h-[66px] left-[24px] top-[18px] absolute">
                     <img className="w-[66px] h-[66px] left-0 top-0 absolute rounded-[5px]" src="/images/green-wonder.png" />
@@ -43,7 +44,7 @@ export default function HostVans(){
                         $70/day
                     </div>
                 </div>
-            </section>
+            </Link>
         </div>
         </>
     )
