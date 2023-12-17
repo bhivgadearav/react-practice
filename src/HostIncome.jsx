@@ -3,7 +3,7 @@ import React from "react";
 export default function HostIncome(){
     return (
         <>
-        <div className="w-[548px] h-[1405px] relative bg-orange-50 top-[200px]">
+        <div className="w-[548px] h-[1405px] relative bg-orange-50">
         <div className="w-[156px] left-[26px] top-[222px] absolute text-neutral-900 text-4xl font-bold font-['Inter'] leading-snug">Income</div>
         <div className="w-[190px] left-[27px] top-[287px] absolute">
             <span className="text-neutral-600 text-base font-medium font-['Inter'] leading-snug">Last </span>

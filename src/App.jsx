@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <div className="w-[548.15px] h-[100px] relative z-50 bg-orange-50">
+      <div className="w-[548.15px] relative z-50 bg-orange-50">
         <header className="pl-[26px] pr-[25.82px] pt-9 pb-[34.62px] left-[0.02px] top-0 absolute bg-orange-50 justify-center items-center gap-[235.21px] inline-flex">
             <Link to='/' className="w-[144.51px] text-black text-[25.35px] font-black font-['Inter'] leading-10">
                 #VANLIFE

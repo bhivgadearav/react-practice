@@ -3,7 +3,7 @@ import React from "react";
 export default function HostReviews(){
     return (
         <>
-        <div className="w-[548px] h-[1089px] relative bg-orange-50 top-[200px]">
+        <div className="w-[548px] h-[1089px] relative bg-orange-50">
             <div className="w-[497.09px] h-[340px] left-[24.91px] top-[218px] absolute">
                 <div className="w-[494.33px] left-0 top-0 absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">
                     Your reviews

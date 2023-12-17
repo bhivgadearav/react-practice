@@ -3,7 +3,7 @@ import React from "react";
 export default function HostDashboard(){
     return (
         <>
-        <div className="w-[548px] h-[1096px] top-[230px] relative bg-orange-50">
+        <div className="w-[548px] h-[1096px] relative bg-orange-50">
             <div className="w-[548px] h-[219px] left-0 top-[210px] absolute bg-orange-100 rounded-[5px]" />
             <div className="w-[548px] h-[113px] left-0 top-[429px] absolute bg-orange-200 rounded-[5px]" />
             <div className="w-[495px] left-[27px] top-[354px] absolute text-neutral-900 text-5xl font-extrabold font-['Inter'] leading-[38px]">
