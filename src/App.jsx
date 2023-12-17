@@ -41,22 +41,22 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/vans" element={ <Vans /> } />
-        <Route path="/vans/:id" element={<VanInfo />} />
-        <Route path="/vans/tier/:tier" element={<Vans />} />
+        <Route path="about" element={<About />} />
+        <Route path="vans" element={ <Vans /> } />
+        <Route path="vans/:id" element={<VanInfo />} />
+        <Route path="vans/tier/:tier" element={<Vans />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/login" element={<Login />} />
-        <Route element={<HostNav />}>
-          <Route path="/host" element={<HostDashboard />} />
-          <Route path="/host/income" element={<HostIncome />} />
-          <Route path="/host/vans" element={<HostVans />} />
-          <Route path="/host/vans/:id" element={<HostVan />}>
-            <Route path="/host/vans/:id" element={<HostVanDetails />} />
-            <Route path="/host/vans/:id/photos" element={<HostVanPhotos />} />
-            <Route path="/host/vans/:id/pricing" element={<HostVanPricing />} />
+        <Route path="login" element={<Login />} />
+        <Route path="host" element={<HostNav />}>
+          <Route index element={<HostDashboard />} />
+          <Route path="income" element={<HostIncome />} />
+          <Route path="vans" element={<HostVans />} />
+          <Route path="vans/:id" element={<HostVan />}>
+            <Route index element={<HostVanDetails />} />
+            <Route path="photos" element={<HostVanPhotos />} />
+            <Route path="pricing" element={<HostVanPricing />} />
           </Route>
-          <Route path="/host/reviews" element={<HostReviews />} />
+          <Route path="reviews" element={<HostReviews />} />
         </Route>
       </Routes>
       </BrowserRouter>
