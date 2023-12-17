@@ -1,6 +1,6 @@
 import React from "react";
 import data from "./data";
-import { Link, useParams, Outlet } from "react-router-dom";
+import { Link, useParams, Outlet, NavLink } from "react-router-dom";
 
 export default function HostVan(props){
     const { id } = useParams();
@@ -14,15 +14,28 @@ export default function HostVan(props){
             </div>
             <div className="w-[496px] h-[499px] left-[26px] top-[286px] absolute">
                 <div className="w-[496px] h-[499px] left-0 top-0 absolute bg-white rounded-md" />
-                <Link to={`/host/vans/${id}`} className="w-[59.21px] h-[18.84px] left-[25px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight">
+                <NavLink to={`/host/vans/${id}`} 
+                end
+                className={({ isActive }) => 
+                isActive ? "underline w-[59.21px] h-[18.84px] left-[25px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight"
+                : "w-[59.21px] h-[18.84px] left-[25px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight"}
+                >
                     Details
-                </Link>
-                <Link to={`/host/vans/${id}/photos`} className="w-[59.21px] h-[18.84px] left-[188.29px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight">
+                </NavLink>
+                <NavLink to={`photos`} 
+                className={({ isActive }) => 
+                isActive ? "underline w-[59.21px] h-[18.84px] left-[188.29px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight"
+                : "w-[59.21px] h-[18.84px] left-[188.29px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight"}
+                >
                     Photos
-                </Link>
-                <Link to={`/host/vans/${id}/pricing`} className="w-[55.62px] h-[18.84px] left-[105.75px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight">
+                </NavLink>
+                <NavLink to={`pricing`} 
+                className={({ isActive }) => 
+                isActive ? "underline w-[55.62px] h-[18.84px] left-[105.75px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight"
+                : "w-[55.62px] h-[18.84px] left-[105.75px] top-[207.82px] absolute text-neutral-900 text-base font-bold font-['Inter'] leading-tight"}
+                >
                     Pricing
-                </Link>
+                </NavLink>
                 <img className="w-[160.15px] h-[157.90px] left-[25px] top-[23px] absolute rounded-[5px]" src={data[id-1].image} />
                 <Outlet />
             </div>
