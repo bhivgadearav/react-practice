@@ -5,7 +5,7 @@ export default function HostNav() {
     return(
         <>
         <div className="w-[548px] z-40 relative bg-orange-50">
-            <NavLink to='/host' 
+            <NavLink to='.' 
             end
             className={({ isActive }) => 
             isActive ? "underline w-[98px] h-[21px] left-[26px] top-[144px] absolute text-neutral-900 text-lg font-bold font-['Inter'] leading-[22.92px]"

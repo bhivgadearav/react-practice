@@ -27,21 +27,21 @@ function App() {
                 #VANLIFE
             </NavLink>
             <div className="grow shrink basis-0 self-stretch relative">
-              <NavLink to='/host' 
+              <NavLink to='host' 
               className={({ isActive }) => 
               isActive ? "w-[51.83px] h-[22.92px] left-[-64.78px] underline top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]"
             : "w-[51.83px] h-[22.92px] left-[-64.78px] top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]"}
               >
                 Host
               </NavLink>
-              <NavLink to='/about' 
+              <NavLink to='about' 
               className={({ isActive }) => 
               isActive ? "w-[51.83px] h-[22.92px] left-0 underline top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]"
             : "w-[51.83px] h-[22.92px] left-0 top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]"}
               >
                   About
               </NavLink>
-              <NavLink to='/vans' 
+              <NavLink to='vans' 
               className={({ isActive }) => 
               isActive ? "w-[51.83px] h-[22.92px] left-[64.78px] underline top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]"
             : "w-[51.83px] h-[22.92px] left-[64.78px] top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]"}

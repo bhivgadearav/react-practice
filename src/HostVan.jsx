@@ -8,7 +8,7 @@ export default function HostVan(props){
         <>
         <div className="w-[548px] h-[905px] relative bg-orange-50">
         <div className="left-[30px] top-[230px] absolute">
-                <Link to="/host/vans" className="text-stone-900 text-base font-medium font-['Inter'] underline leading-[22.92px]">
+                <Link to=".." relative="path" className="text-stone-900 text-base font-medium font-['Inter'] underline leading-[22.92px]">
                     Back to all vans
                 </Link>
             </div>
