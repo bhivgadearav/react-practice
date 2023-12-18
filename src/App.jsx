@@ -56,7 +56,6 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="vans" element={ <Vans /> } />
         <Route path="vans/:id" element={<VanInfo />} />
-        <Route path="vans/tier/:tier" element={<Vans />} />
         <Route path="*" element={<NotFound />} />
         <Route path="login" element={<Login />} />
         <Route path="host" element={<HostNav />}>

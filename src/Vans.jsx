@@ -3,32 +3,33 @@ import { useState, useEffect } from "react";
 import Van from "./Van";
 import vans from "./data"
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 export default function Vans(){
-    const { tier } = useParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    let typeFilter = searchParams.get("tier");
     return(
         <>
         <div className="w-[548.15px] h-[1451.11px] relative bg-orange-50">
             <div className="w-[494.33px] left-[26.91px] top-[165.86px] absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">
                 Explore our van options
             </div>
-            <Link to="/vans" className="left-[417.79px] top-[228.25px] absolute text-neutral-600 text-base font-medium font-['Inter'] underline leading-normal">
+            <Link to="." className="left-[417.79px] top-[228.25px] absolute text-neutral-600 text-base font-medium font-['Inter'] underline leading-normal">
                 Clear filters
             </Link>
             <section className="w-[351px] h-[37px] left-[26.79px] top-[222.25px] absolute">
                 <div className="w-[104px] h-[37px] px-[26px] pt-1.5 pb-[7px] left-0 top-0 absolute bg-orange-100 rounded-[5px] justify-center items-center inline-flex">
-                    <Link to="/vans/tier/simple" className="text-center text-neutral-600 text-base font-medium font-['Inter'] leading-normal">
+                    <Link to="?tier=simple" className="text-center text-neutral-600 text-base font-medium font-['Inter'] leading-normal">
                         Simple
                     </Link>
                 </div>
                 <div className="w-[103px] h-[37px] px-[25px] pt-1.5 pb-[7px] left-[124px] top-0 absolute bg-orange-100 rounded-[5px] justify-center items-center inline-flex">
-                    <Link to="/vans/tier/luxury" className="text-center text-neutral-600 text-base font-medium font-['Inter'] leading-normal">
+                    <Link to="?tier=luxury" className="text-center text-neutral-600 text-base font-medium font-['Inter'] leading-normal">
                         Luxury
                     </Link>
                 </div>
                 <div className="w-[104px] h-[37px] pl-[23px] pr-[22px] pt-1.5 pb-[7px] left-[247px] top-0 absolute bg-orange-100 rounded-[5px] justify-center items-center inline-flex">
-                    <Link to="/vans/tier/rugged" className="text-center text-neutral-600 text-base font-medium font-['Inter'] leading-normal">
+                    <Link to="?tier=rugged" className="text-center text-neutral-600 text-base font-medium font-['Inter'] leading-normal">
                         Rugged
                     </Link>
                 </div>
@@ -36,9 +37,9 @@ export default function Vans(){
             <main className="h-[1000px] w-[450px] left-7 top-[319.19px] flex flex-row absolute">
                 <div className="grid grid-cols-2 gap-x-20 gap-y-20 w-full">
                 {
-                    tier
+                    typeFilter
                         ? vans.map((van) => {
-                            if (van.type === tier) {
+                            if (van.type === typeFilter) {
                             return <Van id={van.id} name={van.name} type={van.type} image={van.image} price={van.price} />;
                             }
                         })
