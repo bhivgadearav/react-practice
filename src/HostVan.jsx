@@ -1,6 +1,6 @@
 import React from "react";
 import data from "./data";
-import { Link, useParams, Outlet, NavLink } from "react-router-dom";
+import { Link, useParams, Outlet, NavLink, useOutletContext } from "react-router-dom";
 
 export default function HostVan(props){
     const { id } = useParams();
@@ -37,7 +37,7 @@ export default function HostVan(props){
                     Pricing
                 </NavLink>
                 <img className="w-[160.15px] h-[157.90px] left-[25px] top-[23px] absolute rounded-[5px]" src={data[id-1].image} />
-                <Outlet />
+                <Outlet context={{id: id}} />
             </div>
             <div className="w-[264.67px] left-[231px] top-[360px] absolute text-neutral-900 text-[26.06px] font-bold font-['Inter'] leading-7">{data[id-1].name}</div>
             <div className="w-[264.67px] left-[231px] top-[400px] absolute">
