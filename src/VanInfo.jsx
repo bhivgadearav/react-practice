@@ -1,16 +1,26 @@
 import React from "react";
 import data from "./data";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 export default function VanInfo(props){
     const { id } = useParams();
+    const location = useLocation();
+    const tier = location.state.query.replace("tier=", "");
     return(
         <>
         <div className="w-[548.15px] h-[1259.75px] relative bg-orange-50">
             <div className="left-[26.91px] top-[151.49px] absolute">
-                <Link to="/vans" className="text-stone-900 text-base font-medium font-['Inter'] underline leading-[22.92px]">
-                    Back to all vans
-                </Link>
+                {
+                    location.state.query ? (
+                        <Link to={`..?${location.state.query}`} relative="path" className="text-stone-900 text-base font-medium font-['Inter'] underline leading-[22.92px]">
+                            Back to {tier} vans
+                        </Link>
+                    ) : (
+                        <Link to=".." relative="path" className="text-stone-900 text-base font-medium font-['Inter'] underline leading-[22.92px]">
+                            Back to all vans
+                        </Link>
+                    )
+                }
             </div>
             <div className="w-[494.33px] left-[26.91px] top-[810.27px] absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">
                 {data[id-1].name}

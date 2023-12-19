@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Van(props) {
+    const [searchParams, setSearchParams] = useSearchParams();
     return (
         <>
-        <Link to={`/vans/${props.id}`}> 
+        <Link state={{query: searchParams.toString()}} to={props.id}> 
             <div className="w-[492.34px] h-[41.86px]">
                 <div className="relative max-w-xl mx-auto">
                     <img className="w-[229.23px] h-[229.23px] rounded-[5px]" src={props.image} />
