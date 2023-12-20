@@ -1,7 +1,15 @@
 import { useState } from "react";
 import "./App.css";
 import Home from "./Home";
-import {BrowserRouter, Routes, Route, Link, NavLink} from "react-router-dom";
+import { 
+  BrowserRouter, 
+  Routes, 
+  Route, 
+  Link, 
+  NavLink, 
+  createBrowserRouter, 
+  createRoutesFromElements,
+  RouterProvider } from "react-router-dom";
 import About from "./About";
 import Vans from "./Vans";
 import VanInfo from "./VanInfo";
@@ -17,10 +25,31 @@ import HostVanDetails from "./HostVanDetails";
 import HostVanPhotos from "./HostVanPhotos";
 import HostVanPricing from "./HostVanPricing";
 
+const router = createBrowserRouter(createRoutesFromElements(
+  <>
+  <Route path="/" element={<Home />} />
+  <Route path="about" element={<About />} />
+  <Route path="vans" element={ <Vans /> } />
+  <Route path="vans/:id" element={<VanInfo />} />
+  <Route path="*" element={<NotFound />} />
+  <Route path="login" element={<Login />} />
+  <Route path="host" element={<HostNav />}>
+    <Route index element={<HostDashboard />} />
+    <Route path="income" element={<HostIncome />} />
+    <Route path="vans" element={<HostVans />} />
+    <Route path="vans/:id" element={<HostVan />}>
+      <Route index element={<HostVanDetails />} />
+      <Route path="photos" element={<HostVanPhotos />} />
+      <Route path="pricing" element={<HostVanPricing />} />
+    </Route>
+    <Route path="reviews" element={<HostReviews />} />
+  </Route>
+  </>
+));
+
 function App() {
   return (
     <>
-      <BrowserRouter>
       <div className="w-[548.15px] relative z-50 bg-orange-50">
         <header className="pl-[26px] pr-[25.82px] pt-9 pb-[34.62px] left-[0.02px] top-0 absolute bg-orange-50 justify-center items-center gap-[235.21px] inline-flex">
             <NavLink to='/' className="w-[144.51px] text-black text-[25.35px] font-black font-['Inter'] leading-10">
@@ -51,26 +80,7 @@ function App() {
             </div>
         </header>
       </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="vans" element={ <Vans /> } />
-        <Route path="vans/:id" element={<VanInfo />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="login" element={<Login />} />
-        <Route path="host" element={<HostNav />}>
-          <Route index element={<HostDashboard />} />
-          <Route path="income" element={<HostIncome />} />
-          <Route path="vans" element={<HostVans />} />
-          <Route path="vans/:id" element={<HostVan />}>
-            <Route index element={<HostVanDetails />} />
-            <Route path="photos" element={<HostVanPhotos />} />
-            <Route path="pricing" element={<HostVanPricing />} />
-          </Route>
-          <Route path="reviews" element={<HostReviews />} />
-        </Route>
-      </Routes>
-      </BrowserRouter>
+      <RouterProvider router = {router} />
     </>
   );
 }
