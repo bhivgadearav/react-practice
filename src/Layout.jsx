@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import avatar from '/images/avatar.png'
 
 export default function Layout(){
     return (
@@ -9,7 +10,7 @@ export default function Layout(){
               <NavLink to='/' className="w-[144.51px] text-black text-[25.35px] font-black font-['Inter'] leading-10">
                   #VANLIFE
               </NavLink>
-              <div className="grow shrink basis-0 self-stretch relative">
+              <div className="left-[-60px] grow shrink basis-0 self-stretch relative">
                 <NavLink to='host' 
                 className={({ isActive }) => 
                 isActive ? "w-[51.83px] h-[22.92px] left-[-64.78px] underline top-0 absolute text-right text-neutral-900 text-base font-semibold font-['Inter'] leading-[22.92px]"
@@ -32,6 +33,7 @@ export default function Layout(){
                     Vans
                 </NavLink>
               </div>
+              <img src={avatar} className="w-6 h-6 left-[500px] top-[37px] absolute" />
           </header>
         </div>
         <Outlet />
