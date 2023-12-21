@@ -1,9 +1,14 @@
 import React from "react";
+import vanImg from '/images/van.png'
 
 export default function Login(){
     return (
         <>
         <div className="w-[548px] h-[617px] relative bg-orange-50">
+            <img 
+                className="left-[170px] top-[50px] w-[200px] h-[200px] absolute"
+                src={vanImg} 
+                alt="van image" />
             <div className="h-[161px] left-[27px] top-[235px] absolute flex-col justify-start items-start gap-[22px] inline-flex">
                 <form className="self-stretch h-[84px] bg-white rounded-md border border-gray-300 flex-col justify-start items-start flex">
                     <input id="email" placeholder="Email Adress" className="self-stretch px-[13px] py-[9px] bg-white rounded-tl-md rounded-tr-md shadow justify-start items-center inline-flex" />
