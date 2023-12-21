@@ -6,29 +6,6 @@ import { Link } from "react-router-dom";
 import { useParams, useSearchParams } from "react-router-dom";
 
 export default function Vans(){
-    // Loading Screen In Case of Fetch 
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    useEffect(() => {
-        async function dummy(){
-            setLoading(true);
-            try {
-                await new Promise((r) => setTimeout(r, 1000));
-                const rate = Math.floor(Math.random() * 100);
-                if (rate < 10){
-                    throw {
-                        message: "Something went wrong"
-                    }
-                }
-            } catch (e) {
-                setError(e);
-                console.log(e);
-            } finally {
-                setLoading(false);
-            }
-        }
-        dummy();
-    }, []);
     const [searchParams, setSearchParams] = useSearchParams();
     let typeFilter = searchParams.get("tier");
     function setQuery(key, value){
@@ -42,19 +19,7 @@ export default function Vans(){
     }
     return(
         <>
-        { loading ?  (
-            <div className="w-[548.15px] h-[1451.11px] relative bg-orange-50">
-                <h1 className="w-[494.33px] left-[26.91px] top-[165.86px] absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">
-                    Loading...
-                </h1>
-            </div>
-        ) : error ? (
-            <div className="w-[548.15px] h-[1451.11px] relative bg-orange-50">
-            <h1 className="w-[494.33px] left-[26.91px] top-[165.86px] absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">
-                {error.message}
-            </h1>
-        </div>
-        )  : (<div className="w-[548.15px] h-[1451.11px] relative bg-orange-50">
+         <div className="w-[548.15px] h-[1451.11px] relative bg-orange-50">
             <div className="w-[494.33px] left-[26.91px] top-[165.86px] absolute text-neutral-900 text-[32px] font-bold font-['Inter'] leading-[33.65px]">
                 Explore our van options
             </div>
@@ -116,7 +81,7 @@ export default function Vans(){
                     Ⓒ 2022 #VANLIFE
                 </div>
             </footer>
-        </div>)}
+        </div>
         </>
     )
 }
