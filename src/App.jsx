@@ -25,6 +25,7 @@ import HostVanDetails from "./HostVanDetails";
 import HostVanPhotos from "./HostVanPhotos";
 import HostVanPricing from "./HostVanPricing";
 import Layout from "./Layout";
+import Error from "./Error";
 
 const router = createBrowserRouter(createRoutesFromElements(
   <>
