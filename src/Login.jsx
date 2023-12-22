@@ -26,7 +26,8 @@ export default function Login(){
                 <form onSubmit={handleSubmit} className="self-stretch h-[84px] bg-white rounded-md border border-gray-300 flex-col justify-start items-start flex">
                     <input 
                     id="email"
-                    type="email" 
+                    type="email"
+                    name="email" 
                     onChange={handleChange} 
                     value={loginFormData.email}
                     placeholder="Email Adress" 
@@ -34,6 +35,7 @@ export default function Login(){
                     <input 
                     id="password" 
                     type="password" 
+                    name="password"
                     onChange={handleChange} 
                     value={loginFormData.password}
                     placeholder="Password" 
