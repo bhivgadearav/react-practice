@@ -1,8 +1,14 @@
 import React from "react";
 import vanImg from '/images/van.png'
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+
+export function loader({ request }){
+    return new URL(request.url).searchParams.get("message")
+}
 
 export default function Login(){
+    const message = useLoaderData();
     const [loginFormData, setLoginFormData] = useState({email: "", password: ""});
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -47,7 +53,17 @@ export default function Login(){
                     </div>
                 </form>
             </div>
-            <div className="w-[494.33px] left-[27.12px] top-[443px] absolute text-center">
+            <div className="w-[494.33px] left-[27.12px] top-[400px] absolute text-center">
+                {
+                    message ? (
+                        <>
+                        <span className="text-red-400 text-base font-bold font-['Inter'] leading-normal">
+                            {message}
+                        </span>
+                        <br />
+                        </>
+                    ) : null
+                }
                 <span className="text-neutral-900 text-base font-medium font-['Inter'] leading-normal">
                     Don’t have an account? 
                 </span>
