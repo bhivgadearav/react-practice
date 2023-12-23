@@ -15,7 +15,7 @@ import About from "./About";
 import Vans from "./Vans";
 import VanInfo from "./VanInfo";
 import NotFound from "./NotFound";
-import Login, {loader as loginLoader} from "./Login";
+import Login, {loader as loginLoader, action as loginAction} from "./Login";
 import HostDashboard from "./HostDashboard";
 import HostVans from "./HostVans";
 import HostReviews from "./HostReviews";
@@ -37,7 +37,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="vans" element={ <Vans /> } />
     <Route path="vans/:id" element={<VanInfo />} />
     <Route path="*" element={<NotFound />} />
-    <Route path="login" element={<Login />} loader={loginLoader}/>
+    <Route path="login" element={<Login />} loader={loginLoader} action={loginAction}/>
     <Route path="host" element={<HostNav />} loader={async () => await Auth()}>
       <Route index element={<HostDashboard />} loader={async () => await Auth()}/>
       <Route path="income" element={<HostIncome />} loader={async () => await Auth()}/>
