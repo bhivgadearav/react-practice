@@ -1,7 +1,8 @@
 import React from "react";
 import vanImg from '/images/van.png'
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { Auth } from "./Utility";
 
 export function loader({ request }){
     return new URL(request.url).searchParams.get("message")
@@ -10,16 +11,19 @@ export function loader({ request }){
 export default function Login(){
     const message = useLoaderData();
     const [loginFormData, setLoginFormData] = useState({email: "", password: ""});
+    const navigate = useNavigate();
     const handleChange = (e) => {
         const {name, value} = e.target
         setLoginFormData((prev) => ({...prev, [name]: value}))
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log({
-            email: loginFormData.email,
-            password: loginFormData.password
-        })
+        const authenticated = await Auth(loginFormData.email, loginFormData.password)
+        if(authenticated){
+            navigate("/host", { replace: true })
+        } else {
+            navigate("/login?message=Invalid email or password")
+        }
     }
     return (
         <>
