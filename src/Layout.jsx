@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import avatar from '/images/avatar.png'
+import { logout } from "./Utility";
 
 export default function Layout(){
     return (

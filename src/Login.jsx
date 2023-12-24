@@ -1,24 +1,25 @@
 import React from "react";
 import vanImg from '/images/van.png'
 import { useState } from "react";
-import { useLoaderData, useNavigate, Form } from "react-router-dom";
-import { Auth } from "./Utility";
+import { useLoaderData, useNavigate, Form, redirect } from "react-router-dom";
+import { auth } from "./Utility";
 
 export function loader({ request }){
     return new URL(request.url).searchParams.get("message")
 }
 
 export async function action ({ request }){
-    // const navigate = useNavigate();
-    // e.preventDefault()
-    // const authenticated = await Auth(email, password)
-    // if(authenticated){
-    //     navigate("/host", { replace: true })
-    // } else {
-    //     navigate("/login?message=Invalid email or password")
-    // }
-    console.log('submitted')
-    return null;
+    const formData = await request.formData();
+    const email = formData.get("email");
+    const password = formData.get("password");
+    console.log(email, password);
+    const authenticated = await auth(email, password);
+    console.log(authenticated);
+    if (authenticated){
+        return redirect("/host");
+    } else {
+        return redirect("/login?message=Invalid Credentials");
+    }
 }
 
 export default function Login(){

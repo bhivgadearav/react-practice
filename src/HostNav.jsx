@@ -1,7 +1,9 @@
 import React from "react";
 import { Outlet, Link, NavLink } from "react-router-dom";
+import { logout } from "./Utility";
 
 export default function HostNav() {
+    const userLogin = localStorage.getItem('loggedIn');
     return(
         <>
         <div className="w-[548px] z-40 relative bg-orange-50">

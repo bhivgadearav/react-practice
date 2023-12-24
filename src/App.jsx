@@ -10,7 +10,8 @@ import {
   createBrowserRouter, 
   createRoutesFromElements,
   RouterProvider,
-redirect } from "react-router-dom";
+  redirect,
+  useNavigate } from "react-router-dom";
 import About from "./About";
 import Vans from "./Vans";
 import VanInfo from "./VanInfo";
@@ -27,29 +28,29 @@ import HostVanPhotos from "./HostVanPhotos";
 import HostVanPricing from "./HostVanPricing";
 import Layout from "./Layout";
 import Error from "./Error";
-import { Auth } from "./Utility";
+import { auth, checkAuth } from "./Utility";
 
 const router = createBrowserRouter(createRoutesFromElements(
   <>
-  <Route path="/" element={<Layout />} >
-    <Route index element={<Home />} />
-    <Route path="about" element={<About />} />
-    <Route path="vans" element={ <Vans /> } />
-    <Route path="vans/:id" element={<VanInfo />} />
-    <Route path="*" element={<NotFound />} />
-    <Route path="login" element={<Login />} loader={loginLoader} action={loginAction}/>
-    <Route path="host" element={<HostNav />} loader={async () => await Auth()}>
-      <Route index element={<HostDashboard />} loader={async () => await Auth()}/>
-      <Route path="income" element={<HostIncome />} loader={async () => await Auth()}/>
-      <Route path="vans" element={<HostVans />} loader={async () => await Auth()}/>
-      <Route path="vans/:id" element={<HostVan />} loader={async () => await Auth()}>
-        <Route index element={<HostVanDetails />} loader={async () => await Auth()}/>
-        <Route path="photos" element={<HostVanPhotos />} loader={async () => await Auth()}/>
-        <Route path="pricing" element={<HostVanPricing />} loader={async () => await Auth()}/>
+    <Route path="/" element={<Layout />} >
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="vans" element={ <Vans /> } />
+      <Route path="vans/:id" element={<VanInfo />} />
+      <Route path="*" element={<NotFound />} />
+      <Route path="login" element={<Login />} loader={loginLoader} action={loginAction}/>
+      <Route path="host" element={<HostNav />} loader={async () => await checkAuth()}>
+        <Route index element={<HostDashboard />} loader={async () => await checkAuth()}/>
+        <Route path="income" element={<HostIncome />} loader={async () => await checkAuth()}/>
+        <Route path="vans" element={<HostVans />} loader={async () => await checkAuth()}/>
+        <Route path="vans/:id" element={<HostVan />} loader={async () => await checkAuth()}> 
+          <Route index element={<HostVanDetails />} loader={async () => await checkAuth()}/>
+          <Route path="photos" element={<HostVanPhotos />} loader={async () => await checkAuth()}/>
+          <Route path="pricing" element={<HostVanPricing />} loader={async () => await checkAuth()}/>
+        </Route>
+        <Route path="reviews" element={<HostReviews />} loader={async () => await checkAuth()}/>
       </Route>
-      <Route path="reviews" element={<HostReviews />} loader={async () => await Auth()}/>
     </Route>
-  </Route>
   </>
 ));
 
