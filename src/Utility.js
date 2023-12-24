@@ -15,10 +15,11 @@ export async function auth(email, password){
   }
 }
 
-export async function checkAuth(){
+export async function checkAuth(request){
+  const pathname = new URL(request.url).pathname;
   const userLogin = localStorage.getItem('loggedIn');
   if (userLogin != 'true') {
-    return redirect("/login?message=Login to continue")
+    return redirect(`/login?message=Login to continue&redirectTo=${pathname}`)
   }
   return null
 }

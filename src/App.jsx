@@ -39,16 +39,16 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route path="vans/:id" element={<VanInfo />} />
       <Route path="*" element={<NotFound />} />
       <Route path="login" element={<Login />} loader={loginLoader} action={loginAction}/>
-      <Route path="host" element={<HostNav />} loader={async () => await checkAuth()}>
-        <Route index element={<HostDashboard />} loader={async () => await checkAuth()}/>
-        <Route path="income" element={<HostIncome />} loader={async () => await checkAuth()}/>
-        <Route path="vans" element={<HostVans />} loader={async () => await checkAuth()}/>
-        <Route path="vans/:id" element={<HostVan />} loader={async () => await checkAuth()}> 
-          <Route index element={<HostVanDetails />} loader={async () => await checkAuth()}/>
-          <Route path="photos" element={<HostVanPhotos />} loader={async () => await checkAuth()}/>
-          <Route path="pricing" element={<HostVanPricing />} loader={async () => await checkAuth()}/>
+      <Route path="host" element={<HostNav />} loader={async ({ request }) => await checkAuth(request)}>
+        <Route index element={<HostDashboard />} loader={async ({ request }) => await checkAuth(request)}/>
+        <Route path="income" element={<HostIncome />} loader={async ({ request }) => await checkAuth(request)}/>
+        <Route path="vans" element={<HostVans />} loader={async ({ request }) => await checkAuth(request)}/>
+        <Route path="vans/:id" element={<HostVan />} loader={async ({ request }) => await checkAuth(request)}> 
+          <Route index element={<HostVanDetails />} loader={async ({ request }) => await checkAuth(request)}/>
+          <Route path="photos" element={<HostVanPhotos />} loader={async ({ request }) => await checkAuth(request)}/>
+          <Route path="pricing" element={<HostVanPricing />} loader={async ({ request }) => await checkAuth(request)}/>
         </Route>
-        <Route path="reviews" element={<HostReviews />} loader={async () => await checkAuth()}/>
+        <Route path="reviews" element={<HostReviews />} loader={async ({ request }) => await checkAuth(request)}/>
       </Route>
     </Route>
   </>

@@ -1,7 +1,12 @@
 import React from "react";
 import vanImg from '/images/van.png'
 import { useState } from "react";
-import { useLoaderData, useNavigate, Form, redirect } from "react-router-dom";
+import { useLoaderData, 
+    useNavigate, 
+    Form, redirect, 
+    useActionData,
+    useNavigation, 
+    useSearchParams} from "react-router-dom";
 import { auth } from "./Utility";
 
 export function loader({ request }){
@@ -9,20 +14,25 @@ export function loader({ request }){
 }
 
 export async function action ({ request }){
+    const pathname = new URL(request.url).searchParams.get("redirectTo") || "/host";
     const formData = await request.formData();
     const email = formData.get("email");
     const password = formData.get("password");
-    console.log(email, password);
-    const authenticated = await auth(email, password);
-    console.log(authenticated);
-    if (authenticated){
-        return redirect("/host");
-    } else {
-        return redirect("/login?message=Invalid Credentials");
+    try {
+        const authenticated = await auth(email, password);
+        if (authenticated){
+            return redirect(pathname);
+        } else {
+            return redirect("/login?message=Invalid Credentials");
+        }
+    } catch(err){
+        return err.message
     }
 }
 
 export default function Login(){
+    const navigation = useNavigation();
+    const errorMessage = useActionData();
     const message = useLoaderData();
     return (
         <>
@@ -32,7 +42,7 @@ export default function Login(){
                 src={vanImg} 
                 alt="van image" />
             <div className="h-[161px] left-[27px] top-[235px] absolute flex-col justify-start items-start gap-[22px] inline-flex">
-                <Form method="post" className="self-stretch h-[84px] bg-white rounded-md border border-gray-300 flex-col justify-start items-start flex">
+                <Form replace method="post" className="self-stretch h-[84px] bg-white rounded-md border border-gray-300 flex-col justify-start items-start flex">
                     <input 
                     type="email"
                     name="email" 
@@ -44,8 +54,8 @@ export default function Login(){
                     placeholder="Password" 
                     className="self-stretch px-[13px] py-[9px] bg-white rounded-bl-md rounded-br-md shadow border border-gray-300 justify-start items-center inline-flex" />
                     <div className="w-[494px] pl-56 pr-[217px] pt-[18px] pb-[17px] bg-orange-400 rounded-md shadow justify-end items-center inline-flex">
-                        <button className="text-white text-base font-bold font-['Inter'] leading-tight">
-                            Sign in
+                        <button disabled={navigation.state=='submitting'} className="text-white text-base font-bold font-['Inter'] leading-tight">
+                            {navigation.state === 'idle' ? 'Sign In' : 'Signing In...'}
                         </button>
                     </div>
                 </Form>
@@ -56,6 +66,16 @@ export default function Login(){
                         <>
                         <span className="text-red-400 text-base font-bold font-['Inter'] leading-normal">
                             {message}
+                        </span>
+                        <br />
+                        </>
+                    ) : null
+                }
+                {
+                    errorMessage ? (
+                        <>
+                        <span className="text-red-400 text-base font-bold font-['Inter'] leading-normal">
+                            {errorMessage}
                         </span>
                         <br />
                         </>
